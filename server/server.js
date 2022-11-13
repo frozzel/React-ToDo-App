@@ -4,6 +4,9 @@ const bodyParser = require("body-parser") // requiring the body-parser
 const PORT = process.env.PORT || 3000 // port that the server is running on => localhost:3000
 const db = require("./models/")
 
+const cors = require("cors")// allows axios to connect to api routes
+app.use(cors())
+
 app.use(bodyParser.json()) // telling the app that we are going to use json to handle incoming payload
 
 function success(res, payload) {
